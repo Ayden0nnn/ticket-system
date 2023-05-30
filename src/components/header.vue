@@ -1,0 +1,63 @@
+<template>
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-demo  w-screen"
+      mode="horizontal"
+      :ellipsis="false"
+      @select="handleSelect"
+    >
+    <el-menu-item index="0">LOGO</el-menu-item>
+    <div class="flex-grow" />
+    <div class="mt-4">
+    <el-input
+    v-model="input"
+    placeholder="搜尋"
+    class="input-with-select w-max rounded-4xl -ml-90"
+    >
+        <template #prepend>
+            <el-button :icon="Search" />
+        </template>
+        <template #append>
+            <el-select v-model="select" placeholder="Select" style="width: 90px">
+            <el-option label="歌手" value="1" />
+            <el-option label="場地" value="2" />
+            </el-select>
+        </template>
+    </el-input>
+    </div>
+      <el-menu-item index="1">Connect wallet</el-menu-item>
+      <el-sub-menu index="2">
+        <template #title>Workspace</template>
+        <el-menu-item index="2-1">item one</el-menu-item>
+        <el-menu-item index="2-2">item two</el-menu-item>
+        <el-menu-item index="2-3">item three</el-menu-item>
+        <el-sub-menu index="2-4">
+          <template #title>item four</template>
+          <el-menu-item index="2-4-1">item one</el-menu-item>
+          <el-menu-item index="2-4-2">item two</el-menu-item>
+          <el-menu-item index="2-4-3">item three</el-menu-item>
+        </el-sub-menu>
+      </el-sub-menu>
+    </el-menu>
+  </template>
+  
+  <script lang="ts" setup>
+  import { ref } from 'vue'
+  import { Search } from '@element-plus/icons-vue'
+    const input = ref('')
+    const select = ref('')
+  const activeIndex = ref('1')
+  const handleSelect = (key: string, keyPath: string[]) => {
+    console.log(key, keyPath)
+  }
+  </script>
+  
+  <style>
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .input-with-select .el-input-group__prepend {
+  background-color: var(--el-fill-color-blank);
+}
+  </style>
+  
