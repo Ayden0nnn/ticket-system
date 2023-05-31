@@ -25,7 +25,7 @@
         </template>
     </el-input>
     </div>
-      <el-menu-item index="1">Connect wallet</el-menu-item>
+      <el-menu-item index="1" @click="requestAccounts">Connect wallet</el-menu-item>
       <el-sub-menu index="2">
         <template #title>Workspace</template>
         <el-menu-item index="2-1">item one</el-menu-item>
@@ -44,12 +44,27 @@
   <script lang="ts" setup>
   import { ref } from 'vue'
   import { Search } from '@element-plus/icons-vue'
+  import { ethers } from 'ethers';
+// await provider.send('eth_requestAccounts', []);
+  // import { Component, Vue } from 'vue';
     const input = ref('')
     const select = ref('')
   const activeIndex = ref('1')
   const handleSelect = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
   }
+  let provider = new ethers.BrowserProvider(window.ethereum);
+
+  const requestAccounts = async () => {
+    try {
+      await provider.send('eth_requestAccounts', []);
+      // 连接成功，执行其他操作
+      // ...
+    } catch (error) {
+      console.error('连接钱包失败:', error);
+      // 处理错误情况
+    }
+  };
   </script>
   
   <style>
