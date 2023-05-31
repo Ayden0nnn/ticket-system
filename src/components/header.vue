@@ -6,7 +6,10 @@
       :ellipsis="false"
       @select="handleSelect"
     >
-    <el-menu-item index="0">LOGO</el-menu-item>
+    <div class="logo">
+
+      <el-menu-item index="0">HOME</el-menu-item>
+    </div>
     <div class="flex-grow" />
     <div class="mt-4">
     <el-input
@@ -59,5 +62,18 @@
   .input-with-select .el-input-group__prepend {
   background-color: var(--el-fill-color-blank);
 }
+  .logo {
+  background-image: url(src/components/logo.jpg);
+  background-size: 250px 90px; /* 調整圖片大小 */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* 可以進一步設定寬度、高度等樣式 */
+}
+.logo .el-menu-item {
+  width: 250px; /* 調整Logo的寬度 */
+  height: 90px; /* 自動計算Logo的高度，保持原始比例 */
+  color: transparent;
+}
+
   </style>
   
