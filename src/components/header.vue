@@ -79,14 +79,13 @@
 }
   .logo {
   background-image: url(src/components/tickety-logo.png);
-  background-size: 250px 90px; /* 調整圖片大小 */
+  background-size:195px 70px; /* 調整圖片大小 */
   background-repeat: no-repeat;
   background-position: center;
   /* 可以進一步設定寬度、高度等樣式 */
 }
 .logo .el-menu-item {
-  width: 250px; /* 調整Logo的寬度 */
-  height: 90px; /* 自動計算Logo的高度，保持原始比例 */
+  width: 195px; /* 調整Logo的寬度 */
   color: transparent;
 }
 

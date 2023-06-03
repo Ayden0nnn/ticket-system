@@ -5,6 +5,7 @@ import { ethers } from 'ethers';
 import { defineConfig } from 'vite'
 // import ElementPlus from 'unplugin-element-plus/vite'
 import { ref } from 'vue'
+// import ShoppingTrolley from @element-plus/icons-vue
 
 
 
@@ -53,18 +54,20 @@ const contractAddress = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4'; // 替換�
 </script>
 
 <template>
-  <div class="wrap -mt-30">
+  <div class="wrap -mt-13">
     <theHeader />
     <div class="flex">
       <img src="./components/icons/ticket.jpeg" class="w-150"/>
       <div class="mt-25  mx-20">
-        <HelloWorld msg="NTNU Concert Ticket" /> 
-        <el-divider border-style="double" />
-        <h3 class="text-xl font-bold">目前售價: </h3>
+        <HelloWorld msg="NTNU Concert Ticket" class=""/> 
+        <el-divider border-style="double" class="" />
+        <h3 class="text-xl font-bold ">目前售價: </h3>
         <div class="flex"><h3 class="text-3xl font-bold m-2">$1000</h3> </div>
         <el-input-number v-model="num" :min="1" :max="100" class="my-4" @change="handleChange" />
+        <div class="">（剩餘數量: 990）</div>
         <br/>
-        <el-button type="primary">購買</el-button>
+        <el-button type="primary" size="large" >購買</el-button>
+  
       </div>
     </div>
   

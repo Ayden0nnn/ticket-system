@@ -7,9 +7,9 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="text-blue-500">{{ msg }}</h1>
-    <h3>
-      NTNU Concert Ticket
-    </h3>
+    <h6>
+      師大演場會門票NFT開賣囉 !!!
+    </h6>
   </div>
 </template>
 
