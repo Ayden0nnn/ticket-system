@@ -78,7 +78,7 @@
   background-color: var(--el-fill-color-blank);
 }
   .logo {
-  background-image: url(src/components/tickety-logo.png);
+  background-image: url(src/components/logo2.png);
   background-size:195px 70px; /* 調整圖片大小 */
   background-repeat: no-repeat;
   background-position: center;
